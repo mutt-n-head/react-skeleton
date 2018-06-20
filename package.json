@@ -4,6 +4,7 @@
   "description": "This is a plain old react skeleton made from scratch and not create script.",
   "main": "index.js",
   "scripts": {
+    "start": "watchify src/Main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
