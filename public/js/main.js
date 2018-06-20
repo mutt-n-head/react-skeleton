@@ -20226,11 +20226,22 @@ var List = function (_Component) {
     _createClass(List, [{
         key: 'render',
         value: function render() {
+            // This is a cool example of passing children into a component that can be
+            // accessed with this.props.children
+            //
             return _react2.default.createElement(
                 'ul',
                 null,
                 fakeData.map(function (piece) {
-                    return _react2.default.createElement(_ListItem2.default, { key: piece.id, ingredient: piece.ingredient });
+                    return _react2.default.createElement(
+                        _ListItem2.default,
+                        { key: piece.id, ingredient: piece.ingredient },
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            'Some paragraph text'
+                        )
+                    );
                 })
             );
         }
@@ -20271,6 +20282,9 @@ var ListItem = function (_Component) {
     _createClass(ListItem, [{
         key: 'render',
         value: function render() {
+            console.log('The children of this are');
+            console.log(this.props.children);
+
             return _react2.default.createElement(
                 'li',
                 null,
